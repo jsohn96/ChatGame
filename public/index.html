@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <ul class="pages">
+    <li class="chat page">
+      <div class="chatArea">
+        <ul class="messages"></ul>
+      </div>
+      <input id ="inputGoal" class="inputGoal" placeholder="Type Goal Here"/>
+      <input id ="inputMessage" class="inputMessage" placeholder="Type here..."/>
+
+      <input readonly id ="squirrelMessage" class="inputMessage" placeholder="You are a Squirrel. A Beautiful Squirrel" />
+      <div id ="squirrelChat">
+        <div class="lineSeparate">
+          <button id="Squeak!" type="button" onclick="buttonClicked('Squeak!')">Squeak!</button>
+
+          <button id="*Shakes Head Violently*" type="button" onclick="buttonClicked('*Shakes Head Violently*')">*Shakes Head Violently*</button>
+          <button id="*Wags Tail in Approval*" type="button" onclick="buttonClicked('*Wags Tail in Approval*')">*Wags Tail in Approval*</button>
+          <button id="Who" type="button" onclick="buttonClicked('Who')">Who</button>
+          <button id="What" type="button" onclick="buttonClicked('What')">What</button>
+          <button id="When" type="button" onclick="buttonClicked('When')">When</button>
+          <button id="Where" type="button" onclick="buttonClicked('Where')">Where</button>
+          <button id="Why" type="button" onclick="buttonClicked('Why')">Why</button>
+          <button id="How" type="button" onclick="buttonClicked('How')">How</button>
+        </div>
+      </div>
+    </li>
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">What's your name?</h3>
+        <input class="usernameInput" type="text" maxlength="14" />
+      </div>
+    </li>
+  </ul>
+  <script>
+    function buttonClicked(vault){
+    document.getElementById("squirrelMessage").value += vault+ " ";
+    document.getElementById(vault).blur();
+  }
+
+  </script>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
